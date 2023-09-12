@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="<?php echo $this->baseURL; ?>assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="<?php echo $this->baseURL; ?>assets/css/styles.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 <body>
@@ -73,38 +74,25 @@
                             </a>
                         </li>
                     </ul>
+                    <?php
+                    // echo "<pre>";
+                    // print_r($_SESSION['userdata']);
+                    // echo "</pre>";
+
+                    ?>
                     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                            <a href="#" target="_blank" class="">
-                                Hello Admin <?php echo $_SESSION['UserData']->username; //echo "<pre>"; print_r($_SESSION['UserData']->username);  
-                                            ?>
-                                <!-- <a href="#" target="_blank" class=""><?php echo $_SESSION['UserData']->username; //echo "<pre>"; print_r($_SESSION['UserData']->username);  
-                                                                            ?></a> -->
-                                <!-- <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a> -->
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="<?php echo $this->baseURL; ?>assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                                        <div class="message-body">
-                                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                                <i class="ti ti-user fs-6"></i>
-                                                <p class="mb-0 fs-3">My Profile</p>
-                                            </a>
-                                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                                <i class="ti ti-mail fs-6"></i>
-                                                <p class="mb-0 fs-3">My Account</p>
-                                            </a>
-                                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                                <i class="ti ti-list-check fs-6"></i>
-                                                <p class="mb-0 fs-3">My Task</p>
-                                            </a>
-                                            <a href="logout" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                                        </div>
-                                    </div>
-                                </li>
-                        </ul>
+                            Hello, <?php echo $_SESSION['userdata']->username; //echo "<pre>"; print_r($_SESSION['UserData']->username);  
+                                    ?>
+                            <!-- <a href="#" target="_blank" class=""><?php echo $_SESSION['UserData']->username; //echo "<pre>"; print_r($_SESSION['UserData']->username);  
+                                                                        ?></a> -->
+                            <!-- <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="<?php echo $this->baseURL; ?>assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+                                </a>
+                            </li>
+                            <a href="logout" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                     </div>
                 </nav>
             </header>

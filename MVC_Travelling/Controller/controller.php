@@ -1,19 +1,24 @@
 <?php
+// echo  "called controller";
+
 session_start();
 require_once("Model/model.php");
 
 class controller extends model
 {
-    public $baseURL = "http://localhost/php/Work/PHP_MVC/Travelling/Public/";
+    public $baseURL = "http://localhost/php/Work/PHP_MVC/MVC_Travelling/Public/";
 
 
     public function __construct()
     {
         ob_start();
         parent::__construct();
+        // echo "<pre>";
+        // print_r($_SERVER);
+        // echo "</pre>";
+
 
         // $this->baseURL="http://localhost/php/Work/PHP_MVC/Travelling/Public/";
-
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
                 case '/home':
@@ -82,9 +87,10 @@ class controller extends model
 
                         if ($loginres['Code'] == 1) {
                             // echo "inside if true auth";
-                            $_SESSION['userdata'] = $loginres['data'];
+                            $_SESSION['userdata'] = $loginres['Data'];
+
                             // echo "<pre>";
-                            // print_r($loginres);
+                            // print_r($_SESSION['userdata']);
                             // print_r($loginres['Data']->roll_id);
                             // exit;
                             if ($loginres['Data']->roll_id == 1) {
@@ -104,9 +110,12 @@ class controller extends model
                     include_once("Views/register.php");
                     include_once("Views/footer.php");
                     if (isset($_REQUEST['register'])) {
-                        array_pop($_REQUEST);
+                        array_pop($_POST);
+                        $hobbyData = implode(",", $_POST['chk']);
+                        unset($_POST['chk']);
+                        // echo $hobbyData;
 
-                        $data = $_REQUEST;
+                        $data = array_merge($_POST, array("	hobby" => $hobbyData));
 
                         // echo "<pre>";
                         // print_r($data);

@@ -114,8 +114,18 @@
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Mobile</h6>
                                     </th>
+
+                                    <!-- <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Address</h6>
+                                    </th> -->
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Action</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Hobby</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Image</h6>
                                     </th>
                                 </tr>
                             </thead>
@@ -164,6 +174,12 @@
                                                     </a>
                                                 <?php } ?>
                                             </div>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <p class="mb-0 fw-normal"><?php echo $value->hobby; ?></p>
+                                            <!-- <div class="d-flex align-items-center gap-2">
+                                                <span class="badge bg-primary rounded-3 fw-semibold">Low</span>
+                                            </div> -->
                                         </td>
                                     </tr>
 

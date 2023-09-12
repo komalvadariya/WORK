@@ -7,10 +7,10 @@ class Model
         {
 
 
-                $this->connection = new mysqli("localhost", "root", "", "PHP");
+                $this->connection = new mysqli("localhost", "root", "", "php");
                 // if ($this->connection) {
                 //         echo "connection success";
-                // } 
+                // }
         }
 
 
